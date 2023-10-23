@@ -25,7 +25,7 @@ if __name__ == "__main__":
     # 로그인
     hotpotato_gmail_account = os.getenv("HOTPOTATO_GMAIL_ACCOUNT")
     hotpotato_gmail_app_password = os.getenv("HOTPOTATO_GMAIL_APP_PASSWORD")
-    print(f"내 메일: {hotpotato_gmail_account} 비번 앞에: {hotpotato_gmail_app_password[0]}")
+    print(f"내 메일: {hotpotato_gmail_account} ")
     print(f"비번 앞에: {hotpotato_gmail_app_password[0]}")
     smtp.login(hotpotato_gmail_account, hotpotato_gmail_app_password)
     
