@@ -1,8 +1,7 @@
 name: send email
 
 on:
-  workflow_dispatch 
-  
+  workflow_dispatch:
   schedule:
     - cron: "*/5 * * * *"
 
