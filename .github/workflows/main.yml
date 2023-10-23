@@ -34,7 +34,7 @@ jobs:
           pipenv install --dev
           
       - name: Set up .env
-        run: 
+        run: |
           echo "HOTPOTATO_GMAIL_ACCOUNT=${{ secrets.HOTPOTATO_GMAIL_ACCOUNT }}" >> .env
           echo "HOTPOTATO_GMAIL_APP_PASSWORD=${{ secrets.HOTPOTATO_GMAIL_APP_PASSWORD }}" >> .env
       - name: Send email to test user
