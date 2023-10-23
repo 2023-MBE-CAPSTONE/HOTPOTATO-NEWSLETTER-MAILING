@@ -26,6 +26,6 @@ jobs:
         env:
           HOTPOTATO_GMAIL_ACCOUNT: ${{ secrets.HOTPOTATO_GMAIL_ACCOUNT }}
           HOTPOTATO_GMAIL_APP_PASSWORD: ${{ secrets.HOTPOTATO_GMAIL_APP_PASSWORD }}
-      - name: Send email
+      - name: Send email to test user
         run:
           pipenv run python send.py
