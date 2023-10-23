@@ -35,11 +35,8 @@ jobs:
           
       - name: Set up .env
         run: 
-          echo "HOTPOTATO_GMAIL_ACCOUNT=$HOTPOTATO_GMAIL_ACCOUNT" >> .env
-          echo "HOTPOTATO_GMAIL_APP_PASSWORD=$HOTPOTATO_GMAIL_APP_PASSWORD" >> .env
-        env:
-          HOTPOTATO_GMAIL_ACCOUNT: ${{ secrets.HOTPOTATO_GMAIL_ACCOUNT }}
-          HOTPOTATO_GMAIL_APP_PASSWORD: ${{ secrets.HOTPOTATO_GMAIL_APP_PASSWORD }}
+          echo "HOTPOTATO_GMAIL_ACCOUNT=${{ secrets.HOTPOTATO_GMAIL_ACCOUNT }}" >> .env
+          echo "HOTPOTATO_GMAIL_APP_PASSWORD=${{ secrets.HOTPOTATO_GMAIL_APP_PASSWORD }}" >> .env
       - name: Send email to test user
         run:
           pipenv run python send.py
