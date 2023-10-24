@@ -35,13 +35,18 @@ if __name__ == "__main__":
     msg["Subject"] = f"첨부 파일 확인 바랍니다"  # 메일 제목
     msg["From"] = hotpotato_gmail_account
     msg["To"] = to_mail
-    
+    in_text = "감자"
     # 메일 본문 내용
-    content = "안녕하세요. \n\n\
-    데이터를 전달드립니다.\n\n\
-    감사합니다\n\n\
-    "
-    content_part = MIMEText(content, "plain")
+    html_body = """
+        <html>
+        <body>
+            <p>{text}</p>
+            <p>이것은 추가 텍스트입니다. 원하는 내용을 여기에 추가하세요.</p>
+            <p>뉴스레터 내용을 확장하고 원하는 내용을 여기에 추가하세요.</p>
+        </body>
+        </html>
+        """.format(text=in_text)
+    content_part = MIMEText(html_body, "html")
     msg.attach(content_part)
     
     # 이미지 파일 추가
