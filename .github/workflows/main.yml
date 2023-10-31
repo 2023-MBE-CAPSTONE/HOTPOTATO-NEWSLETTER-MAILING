@@ -39,4 +39,4 @@ jobs:
           echo "HOTPOTATO_GMAIL_APP_PASSWORD=${{ secrets.HOTPOTATO_GMAIL_APP_PASSWORD }}" >> .env
       - name: Send email to test user
         run:
-          pipenv run python send.py
+          python send.py
